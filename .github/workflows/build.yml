@@ -41,7 +41,7 @@ jobs:
           if [ ! -f gradlew ] || [ ! -f gradle/wrapper/gradle-wrapper.jar ]; then
             echo "gradlew belum ada, membuat otomatis..."
             mkdir -p /tmp/wrapgen
-            (cd /tmp/wrapgen && gradle wrapper --gradle-version 8.7 --no-daemon)
+            (cd /tmp/wrapgen && touch settings.gradle && gradle wrapper --gradle-version 8.7 --no-daemon)
             cp /tmp/wrapgen/gradlew /tmp/wrapgen/gradlew.bat .
             mkdir -p gradle/wrapper
             cp /tmp/wrapgen/gradle/wrapper/* gradle/wrapper/
